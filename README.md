@@ -50,7 +50,15 @@ chalice-local deploy
 In a separate terminal window, curl the rest api
 ```
 curl http://localhost:4566/restapis/xj0gy9hra9/api/_user_request_/
-> {"Code":"InternalServerError","Message":"Unknown request."}
+> {"hello":"world"}
 ```
 
-Uh-oh! We have a 500 error. See https://github.com/localstack/chalice-local/issues/4 for status on this issue.
+To clean up our resources deployed to localstack we can use
+```
+chalice-local delete
+> Deleting Rest API: xj0gy9hra9
+> Deleting function: arn:aws:lambda:us-east-1:000000000000:function:helloworld-dev
+> Deleting IAM role: helloworld-dev
+```
+
+Tutorial complete!
